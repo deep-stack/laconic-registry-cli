@@ -51,7 +51,7 @@ describe('Test laconic CLI commands', () => {
   describe('laconic CNS commands', () => {
     const testAccount = process.env.TEST_ACCOUNT;
     assert(testAccount, 'TEST_ACCOUNT not set in env');
-    const testAccount2 = 'ethm1vc62ysqu504at932jjq8pwrqgjt67rx6ggn5yu';
+    const testAccount2 = 'laconic1pmuxrcnuhhf8qdllzuf2ctj2tnwwcg6yswqnyd';
     const initialAccountBalance = Number('100000000000000000000000000');
 
     const testAuthorityName = 'laconic';
