@@ -302,39 +302,6 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@cerc-io/laconic-sdk@^0.1.15":
-  version "0.1.15"
-  resolved "https://git.vdb.to/api/packages/cerc-io/npm/%40cerc-io%2Flaconic-sdk/-/0.1.15/laconic-sdk-0.1.15.tgz#1011a07933c6f1525e05e1ba7dd6a4e4df9b6edb"
-  integrity sha512-Ifl4JUGpckZsu2RkaGyGlObpu9B9GhwFVoDCt8WM9ApdtFnGEVSbDzRuh4f2vLj9WaZkbfdSI/Xci1Fugj3lZg==
-  dependencies:
-    "@cosmjs/amino" "^0.28.1"
-    "@cosmjs/crypto" "^0.28.1"
-    "@cosmjs/encoding" "^0.28.1"
-    "@ipld/dag-cbor" "^7.0.1"
-    "@ipld/dag-json" "^8.0.9"
-    "@metamask/eth-sig-util" "^4.0.0"
-    "@tharsis/address-converter" "^0.1.7"
-    "@tharsis/eip712" "^0.2.1"
-    "@tharsis/proto" "^0.1.16"
-    "@tharsis/provider" "^0.2.4"
-    "@tharsis/transactions" "^0.2.2"
-    axios "^0.26.1"
-    bip32 "3.0.1"
-    bip39 "^3.0.4"
-    canonical-json "^0.0.4"
-    ethers "^5.6.2"
-    evmosjs "^0.2.5"
-    graphql.js "^0.6.8"
-    js-sha256 "^0.9.0"
-    js-yaml "^3.14.1"
-    jsonschema "^1.4.0"
-    lodash "^4.17.21"
-    multiformats "^9.5.4"
-    node-yaml "^4.0.1"
-    secp256k1 "^4.0.1"
-    semver "^7.3.5"
-    tiny-secp256k1 "^1.1.6"
-
 "@cosmjs/amino@^0.28.1":
   version "0.28.4"
   resolved "https://registry.yarnpkg.com/@cosmjs/amino/-/amino-0.28.4.tgz#9315f6876dba80148cf715ced44d1dc7a9b68b94"

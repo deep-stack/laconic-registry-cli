@@ -179,7 +179,7 @@ describe('Test laconic CLI commands', () => {
 
         // Expect empty object
         expect(bondOutputObj.length).toEqual(1);
-        expect(bondOutputObj[0]).toEqual({ id: '', owner: '', balance: [] });
+        expect(bondOutputObj[0]).toEqual(null);
       });
     });
 
@@ -398,7 +398,7 @@ describe('Test laconic CLI commands', () => {
           chainId: CHAIN_ID,
           auctionId: testAuctionId,
           bidderAddress: testAccount,
-          bidAmount: `${bidAmount}aphoton`
+          bidAmount: `${bidAmount}photon`
         });
       }, (AUCTION_COMMIT_DURATION + 5) * 1000);
     });
@@ -481,7 +481,7 @@ describe('Test laconic CLI commands', () => {
     });
 
     describe('Name operations', () => {
-      const testName = 'crn://laconic/watcher/erc20';
+      const testName = 'lrn://laconic/watcher/erc20';
 
       test('laconic cns name set <name> <record_id>', async () => {
         const result = spawnSync('laconic', ['cns', 'name', 'set', testName, testRecordId]);
