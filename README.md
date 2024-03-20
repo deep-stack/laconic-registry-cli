@@ -17,7 +17,7 @@ Run the chain:
   - In laconicd repo run:
 
     ```bash
-    TEST_AUCTION_ENABLED=true ./scripts/init.sh
+    TEST_AUCTION_ENABLED=true ./scripts/init.sh clean
     ```
 
 Registering records in registry requires an account. To get account private key run:
@@ -27,33 +27,6 @@ laconic2d keys export alice --keyring-backend test  --unarmored-hex --unsafe
 ```
 
 In `config.yml` file assign the account private key to `userKey`.
-
-## Run test
-
-* Create .env file using .env.example
-
-  ```bash
-  cp .env.example .env
-  ```
-
-* Get account address of test account
-
-  ```bash
-  laconic2d keys list --keyring-backend test
-
-  # - address: laconic10er85pyd7ukw732e88fzv7k0jq205764hye2dx
-  #   name: alice
-  #   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AsDoWlNIr3W013pOiwmopaB/SaWQj6r3g56xb2d9GxYK"}'
-  #   type: local
-  ```
-
-  Use the `address` field from the result and assign it in `TEST_ACCOUNT` field of `.env` file
-
-* Run laconic registry cli test
-
-  ```bash
-  yarn test
-  ```
 
 ## Gas and Fees
 
@@ -111,10 +84,10 @@ $ laconic registry status
 Get account details:
 
 ```bash
-$ laconic registry account get --address ethm133y09mveksh76uc99h4rl38nd033tk4e3y2z52
+$ laconic registry account get --address laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k
 [
   {
-    "address": "ethm133y09mveksh76uc99h4rl38nd033tk4e3y2z52",
+    "address": "laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k",
     "pubKey": "A2BeFMnq4h0v5/hP+trvQbCtVWwGGYNSHWRJ7Ae60biS",
     "number": "0",
     "sequence": "37",
@@ -131,10 +104,10 @@ $ laconic registry account get --address ethm133y09mveksh76uc99h4rl38nd033tk4e3y
 Send tokens:
 
 ```bash
-$ laconic registry tokens send --address ethm1vc62ysqu504at932jjq8pwrqgjt67rx6ggn5yu --type photon --quantity 1000000000
+$ laconic registry tokens send --address laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k --type photon --quantity 1000000000
 [
   {
-    "address": "ethm1lfekr7gvqtnhpp2kwdc6u2n569cqsp4ww0m4y8",
+    "address": "laconic1pmuxrcnuhhf8qdllzuf2ctj2tnwwcg6yswqnyd",
     "pubKey": "A68/q7/xazFzNj+rrvE07ALxkMgqw1ugL35VECkWAYvt",
     "number": "0",
     "sequence": "16",
@@ -146,7 +119,7 @@ $ laconic registry tokens send --address ethm1vc62ysqu504at932jjq8pwrqgjt67rx6gg
     ]
   },
   {
-    "address": "ethm1vc62ysqu504at932jjq8pwrqgjt67rx6ggn5yu",
+    "address": "laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k",
     "pubKey": null,
     "number": "12",
     "sequence": "0",
@@ -249,7 +222,7 @@ $ laconic registry authority whois laconic
     "auction": {
       "id": "0294fb2e3659c347b53a6faf4bef041fd934f0f3ab13df6d2468d5d63abacd48",
       "status": "commit",
-      "ownerAddress": "ethm1lfekr7gvqtnhpp2kwdc6u2n569cqsp4ww0m4y8",
+      "ownerAddress": "laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k",
       "createTime": "2022-04-26T11:43:45.679728594",
       "commitsEndTime": "2022-04-26T11:44:45.679728594",
       "revealsEndTime": "2022-04-26T11:45:45.679728594",
@@ -288,7 +261,7 @@ $ laconic registry auction get 0294fb2e3659c347b53a6faf4bef041fd934f0f3ab13df6d2
   {
     "id": "0294fb2e3659c347b53a6faf4bef041fd934f0f3ab13df6d2468d5d63abacd48",
     "status": "commit",
-    "ownerAddress": "ethm1lfekr7gvqtnhpp2kwdc6u2n569cqsp4ww0m4y8",
+    "ownerAddress": "laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k",
     "createTime": "2022-04-26T11:42:05.256059269",
     "commitsEndTime": "2022-04-26T11:44:45.679728594",
     "revealsEndTime": "2022-04-26T11:45:45.679728594",
@@ -347,7 +320,7 @@ $ laconic registry authority reserve echo.laconic
 Create sub-authority (custom owner for sub-authority):
 
 ```bash
-$ laconic registry authority reserve kube.laconic --owner ethm1vc62ysqu504at932jjq8pwrqgjt67rx6ggn5yu
+$ laconic registry authority reserve kube.laconic --owner laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k
 ```
 
 Set name:
@@ -435,7 +408,7 @@ $ laconic registry bond list
 [
   {
     "id": "58508984500aa2ed18e059fa8203b40fbc9828e3bfa195361335c4e4524c4785",
-    "owner": "ethm1lfekr7gvqtnhpp2kwdc6u2n569cqsp4ww0m4y8",
+    "owner": "laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k",
     "balance": [
       {
         "type": "photon",
@@ -445,7 +418,7 @@ $ laconic registry bond list
   },
   {
     "id": "5c40abd336ae1561f2a1b55be73b12f5a083080bf879b4c9288d182d238badb0",
-    "owner": "ethm1lfekr7gvqtnhpp2kwdc6u2n569cqsp4ww0m4y8",
+    "owner": "laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k",
     "balance": [
       {
         "type": "photon",
@@ -463,7 +436,7 @@ $ laconic registry bond get --id 58508984500aa2ed18e059fa8203b40fbc9828e3bfa1953
 [
   {
     "id": "58508984500aa2ed18e059fa8203b40fbc9828e3bfa195361335c4e4524c4785",
-    "owner": "ethm1lfekr7gvqtnhpp2kwdc6u2n569cqsp4ww0m4y8",
+    "owner": "laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k",
     "balance": [
       {
         "type": "photon",
@@ -477,11 +450,11 @@ $ laconic registry bond get --id 58508984500aa2ed18e059fa8203b40fbc9828e3bfa1953
 Query bonds by owner:
 
 ```bash
-$ laconic registry bond list --owner ethm1lfekr7gvqtnhpp2kwdc6u2n569cqsp4ww0m4y8
+$ laconic registry bond list --owner laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k
 [
   {
     "id": "58508984500aa2ed18e059fa8203b40fbc9828e3bfa195361335c4e4524c4785",
-    "owner": "ethm1lfekr7gvqtnhpp2kwdc6u2n569cqsp4ww0m4y8",
+    "owner": "laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k",
     "balance": [
       {
         "type": "photon",
@@ -491,7 +464,7 @@ $ laconic registry bond list --owner ethm1lfekr7gvqtnhpp2kwdc6u2n569cqsp4ww0m4y8
   },
   {
     "id": "5c40abd336ae1561f2a1b55be73b12f5a083080bf879b4c9288d182d238badb0",
-    "owner": "ethm1lfekr7gvqtnhpp2kwdc6u2n569cqsp4ww0m4y8",
+    "owner": "laconic15za32wly5exgcrt2zfr8php4ya49n5y7masu7k",
     "balance": [
       {
         "type": "photon",
