@@ -6,6 +6,8 @@ CLI utility written in TS, used to interact with laconicd. Depends on [registry-
 
 * Run `yarn` to install all dependencies.
 
+* Run `yarn build`.
+
 * Create a `config.yml` file from [config.example.yml](./config.example.yml) file.
 
 ## Account Setup
@@ -15,16 +17,43 @@ Run the chain:
   - In laconicd repo run:
 
     ```bash
-    TEST_AUCTION_ENABLED=true ./init.sh
+    TEST_AUCTION_ENABLED=true ./scripts/init.sh
     ```
 
 Registering records in registry requires an account. To get account private key run:
 
 ```bash
-$ laconicd keys export mykey --unarmored-hex --unsafe
+laconic2d keys export alice --keyring-backend test  --unarmored-hex --unsafe
 ```
 
 In `config.yml` file assign the account private key to `userKey`.
+
+## Run test
+
+* Create .env file using .env.example
+
+  ```bash
+  cp .env.example .env
+  ```
+
+* Get account address of test account
+
+  ```bash
+  laconic2d keys list --keyring-backend test
+
+  # - address: laconic10er85pyd7ukw732e88fzv7k0jq205764hye2dx
+  #   name: alice
+  #   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AsDoWlNIr3W013pOiwmopaB/SaWQj6r3g56xb2d9GxYK"}'
+  #   type: local
+  ```
+
+  Use the `address` field from the result and assign it in `TEST_ACCOUNT` field of `.env` file
+
+* Run laconic registry cli test
+
+  ```bash
+  yarn test
+  ```
 
 ## Gas and Fees
 
