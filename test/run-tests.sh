@@ -16,7 +16,7 @@ config_file="config.yml"
 config=$(cat <<EOL
 services:
   registry:
-    restEndpoint: $laconicd_rpc_endpoint
+    rpcEndpoint: $laconicd_rpc_endpoint
     gqlEndpoint: $laconicd_gql_endpoint
     userKey: $laconicd_key
     bondId:
